@@ -50,6 +50,7 @@ const ProjectSchema: Schema = new Schema(
   },
   {timestamps: true}
 );
+
 //*if delete a Project, all task will be deleted too
 ProjectSchema.pre('deleteOne', {document: true}, async function () {
   const projectId = this._id;
